@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        
+         /* *{
+             box-sizing: border-box;
+             margin: 0;
+             padding: 0;
+         } */
+        
+        #app{
+            margin: 0;
+            padding: 0;
+            width: 390px;
+            height: 570px;
+            font-size: 35px;
+            text-align: center;
+            border: 3px solid gray;
+            border-radius: 10px;
+            margin: auto;
+            margin-top: auto;
+            color: rgb(0, 102, 255);
+            /* background-color:  rgb(211, 211, 211); */
+
+            
+            } 
+            
+         #search{
+            position: absolute;
+            left: 38%;
+            top: 17%;
+           
+
+        }
+         #forcast{
+            width: 250px;
+            height: 31px;
+             border: none;
+             outline: none;
+             border-bottom: 2px solid gray;
+            font-size: 19px;
+            /* background-color: lightgray; */           
+            
+        }
+        #button{
+             width: 84px;
+             height: 30px;
+             position: fixed;
+            left: 57%;
+            top: 19%;
+            background-color: rgb(0, 102, 255);
+            color: white;
+            outline: none;
+            border: none;
+            font-size: 18px;
+            
+         }
+          
+         #temp{
+             text-align: center;
+             /* display: flex; */
+             margin: auto;
+             padding: auto;
+             top: 10%;
+             
+         }
+         /* new */
+         #cityName{
+             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+             font-size: 2.5rem;
+
+         }
+          
+
+         #temp-degree{
+             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+             font-size: 1.5rem;
+             text-align: center;
+
+         }
+
+         #temp-value{
+             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+             font-size: 3rem;
+             text-align: center;
+             
+
+         }
+         #climate{
+             position: relative;
+             
+             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+             font-size: 3rem;
+             text-align: center;
+
+         }
+        
+         
+          
+         
+         #cityName{
+             position: relative;
+             top: 12%;
+
+
+        }
+        #climate{
+            position: relative;
+
+            bottom: 7%;
+        }
+         
+          
+           
+    </style>
+</head> 
+<body>
+    
+
+    <div  id="app"> 
+
+    <p class="weather">Weather App</p>    
+     
+    
+    <div  id="search">
+        <input id="forcast"   type="search" name="" placeholder="Search Weather Forcast">
+      <!-- <br>    <button id="button">SEARCH</button> -->
+
+    </div>
+    
+    <div id="cityName">
+        <p class="name">----------</p>
+    </div>
+
+    <div id="temp">
+        <img id="tempicon" src="file:///C:/Users/admin/Pictures/suns%20cloud.jpg">
+        <p><span id="temp-value">---------</span> <span id="temp-degree"></span></p>
+    </div>
+
+    <div id="climate">
+        <p>----------</p>
+    </div>
+    
+     
+    </div>
+
+    
+
+  <!-- <button class="button">SEARCH</button> -->
+    
+
+  <script>
+
+      const weatherApi = {
+          key:"6d83156e4e40ca97d0c6924b832fe00c",
+          baseUrl : "https://api.openweathermap.org/data/2.5/weather"
+
+      }
+      const search=document.getElementById("forcast");
+
+      search.addEventListener('keypress',(event) => {
+
+          if(event.keyCode == 13)  {
+
+
+          console.log(search.value);
+          getWeatherReport(search.value);
+
+
+          }
+
+      });
+
+      function getWeatherReport(city){
+          fetch(`${weatherApi.baseUrl}?q=${city}&appid=${weatherApi.key}&units=metric`)
+          .then(weather=>{
+              return weather.json();
+          }).then(showWeatherReport);
+
+      }
+
+
+      function showWeatherReport(weather){
+          console.log(weather);
+
+
+          let cityName=document.getElementById("cityName");
+          cityName.innerHTML=`${weather.name},${weather.sys.country}`;
+
+
+          let tempvalue=document.getElementById("temp-value");
+          tempvalue.innerHTML=`${Math.round(weather.main.temp)}&deg;c`;
+
+
+          let climate=document.getElementById("climate");   
+          climate.innerHTML=`${weather.weather[0].main}`;
+
+          
+
+        
+
+                 if(climate.textContent =='Haze'){
+                     tempicon.src=" file:///F:/hazes.png";
+                 }
+
+                else if(climate.textContent =='Clouds'){
+                     tempicon.src="file:///F:/atmospheric.jpg";
+                 }
+
+                else if(climate.textContent =='Thundstrom'){
+                     tempicon.src=" file:///F:/thundstrom.jpg";
+                 }
+
+                 else if(climate.textContent =='Rain'){
+                     tempicon.src="file:///F:/rain.jpg";
+                 }
+
+                 else if(climate.textContent =='Clear'){
+                     tempicon.src="file:///C:/Users/admin/Pictures/suns.jpg";
+                 }
+
+                else if(climate.textContent =='Snow'){
+                     tempicon.src="file:///F:/snow.jpg";
+                 }
+
+                // else if(climate.textContent =='Haze'){
+                //      tempicon.src="file:///F:/atmospheric.jpg";
+                //  }
+
+
+           
+
+
+
+
+      }
+
+  </script>
+    
+
+
+
+
+
+
+
+
+
+
+ 
+     
+
+
+
+</body>
+</html>
