@@ -1,0 +1,162 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+      
+     <title>Document</title>
+     <style >
+         img{
+             margin: auto;
+             display: block;
+             background-color: whitesmoke;
+         }
+         button.itfirst{
+               
+              
+            
+             
+             cursor: pointer;
+             position: fixed;
+            top: 74%;
+             left: 30%;
+             width: 15px;
+             height: 30px;
+             margin: auto;
+             border-radius: 15px 15px;
+             color:  white;
+             background-color:rgba(68, 0, 255, 0.788);
+             cursor: pointer;
+             font-size: 20px;
+             padding: 0 50px;
+             border: none;
+             align-items: center;
+             
+             
+         }
+         button.itsecond{
+            position: fixed;
+            top: 74%;
+             left: 40%;
+             width: 15px;
+             height: 30px;
+             margin: auto;
+             border-radius: 15px 15px;
+             color:  white;
+             background-color: rgba(255, 0, 0, 0.842);
+             cursor: pointer;
+             font-size: 20px;
+             padding: 0 50px;
+             border: none;
+             align-items: center;
+             display: inline-block;
+             
+
+         }
+         button.itthird{
+             margin: auto;
+             padding: 0 50px;
+             color: white;
+             background-color: gray;
+             cursor: pointer;
+             position: fixed;
+            top: 74%;
+             left: 50%;
+             width: 15px;
+             height: 30px;
+             margin: auto;
+             border-radius: 15px 15px;
+             color:  white;
+             background-color: gray;
+             cursor: pointer;
+             font-size: 20px;
+             padding: 0 50px;
+             border: none;
+             align-items: center;
+
+
+
+         }
+         button.itfour{
+             margin: auto;
+             padding: 0 50px;
+             color:  white;
+            
+             cursor: pointer;
+             position: fixed;
+            top: 74%;
+             left: 60%;
+             width: 15px;
+             height: 30px;
+             margin: auto;
+             border-radius: 15px 15px;
+             color:  white;
+             background-color: rgba(0, 0, 0, 0.918);
+             cursor: pointer;
+             font-size: 20px;
+             padding: 0 50px;
+             border: none;
+             align-items: center;
+
+         }
+
+
+         /* by this give text */
+         h1{
+             position: fixed;
+             left: 10%;
+             top: 69%;
+             background: white;
+             color:#01fe87;
+             border-radius: 10px 10px;
+
+             
+             
+             
+         }
+          .select{
+             content: attr("data-text");     
+             color:#01fe87;
+            }
+         
+     </style>
+ </head>
+ <body>
+     <div id="voiceo">
+         <img src=" F:\bluehd.jpeg">
+            </div>
+
+     <div class="button-area">
+          
+          <button   class="itfirst" onclick="key()"  >Blue</button>
+          <button   class="itsecond" onclick="press()">Red</button>
+          <button   class="itthird" onclick="push()"  >Gray</button>
+          <button   class="itfour" onclick="pull()">Black</button>
+
+
+      </div>
+
+      
+   <script>
+        
+       
+        function press(){
+            document.getElementById("voiceo").innerHTML= '<img src="   file:///F:/redhd.jpeg">'
+        }
+
+        function push(){
+            document.getElementById("voiceo").innerHTML= '<img src="  F:\grayhd.jpeg">'
+        }
+
+        function pull(){
+            document.getElementById("voiceo").innerHTML= '<img src="  file:///F:/blackhd.jpeg">'
+        }
+
+        function  key(){
+            document.getElementById("voiceo").innerHTML= '<img src="file:///F:/bluehd.jpeg">'
+        }
+   </script>
+
+
+
+<h1  data-text=""="select">Select Colour ...</h1>
+ </body>
+ </html>
