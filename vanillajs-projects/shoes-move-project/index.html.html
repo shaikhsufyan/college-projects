@@ -1,0 +1,109 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+          img{
+              margin: auto;
+              display: block;
+              margin-top: 8%;
+          }
+          .red{
+            margin: auto;
+              position: fixed;
+              left: 40%;
+              top: 72%;
+               width: 50px;
+               height: 50px;
+               cursor: pointer;
+              background:   rgba(255, 0, 0, 0.849);
+              border-radius:  50%;
+              outline: none;
+              border: none;
+              
+          }
+          .blue{
+              margin: auto;
+              position: fixed;
+              left: 45%;
+              top: 72%;
+              width: 50px;
+              height: 50px;
+              background:  rgba(0, 4, 255, 0.795);
+              border-radius:  50%;
+              outline: none;
+              border: none;
+              cursor: pointer;
+
+
+            
+          }
+          
+          .black{
+              margin: auto;
+              position: fixed;
+              left: 50%;
+              top: 72%;
+              width: 50px;
+              height: 50px;
+              background: black;
+              border-radius:  50%;
+              outline: none;
+              border: none;
+              cursor: pointer;
+
+
+          }
+          .gray{
+            margin: auto;
+              position: fixed;
+              left: 55%;
+              top: 72%;
+              width: 50px;
+              height: 50px;
+              background:  gray;
+              border-radius:  50%;
+              outline: none;
+              border: none;
+              cursor: pointer;
+
+              
+          }
+      </style>
+  </head>
+  <body>   
+
+      <div class="greater">
+          <button class="red" onclick="firstcolor()"></button>
+          <button class="blue" onclick="seccolor()"></button>
+          <button class="black"  onclick="thcolor()"></button>
+          <button class="gray"  onclick="fcolor()"></button>
+
+      </div>
+      <div  id="shoes">
+      <img src=" file:///F:/lofer4.jpeg" >
+      </div>
+
+
+      <script>
+          function firstcolor(){
+              document.getElementById("shoes").innerHTML='<img src=" file:///F:/lofer4.jpeg">'
+          }
+
+          function seccolor(){
+              document.getElementById("shoes").innerHTML='<img src=" file:///F:/lofer2.jpeg ">'
+          }
+
+          function thcolor(){
+              document.getElementById("shoes").innerHTML='<img src=" file:///F:/lofer1.jpeg ">'
+          }
+
+           function fcolor(){ 
+              document.getElementById("shoes").innerHTML='<img src="  file:///F:/lofer3.jpeg">'
+          }
+      </script>
+  </body>
+  </html>
