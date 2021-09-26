@@ -1,0 +1,270 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     
+     <title>Document</title>
+ </head>
+
+   <style>
+       input{
+           margin: 3%;
+           padding: 0;
+           font-size:20px ;
+           border: none;
+           outline: none;
+           border-bottom:2px solid gray ;
+       }
+
+       .image1{
+           
+            
+           margin: 0;
+           padding: 0;
+           text-align: center;
+
+       }
+      .imagefirst{
+           
+          text-align: center;
+           
+          
+            
+ 
+      }
+      
+       /*func 2nd we= making arrow  */
+       i{
+           border: solid black;
+           border-width: 0 3px 3px 0 ;
+           display: inline-block;
+           padding: 3px;
+           width: 30px;
+           height: 30px; 
+
+       }
+       .right{
+           transform: rotate(-45deg);
+           position: absolute;
+           left: 95%;
+           top: 55%;
+           
+       }
+       
+       .left{
+           transform: rotate(135deg);
+           position: absolute;
+           left: 1%;
+           top: 55%;
+       }
+
+       /* THIS IS IMAGE SLIDER CSS */
+
+       .container{
+           overflow: hidden;
+            
+       }
+       .container figure{
+           position: relative;
+           width: 500%;
+           margin: 0;
+           left: 0;
+           animation: slider 5s infinite linear;
+       }
+       .container figure img{
+ 
+           width: 20%;
+           height: 300px;
+           float: left;
+       }
+        .container{
+            position:relative;
+            top: 30%;
+        }
+
+
+ 
+       @keyframes slider{
+            0%{
+                left: 0;
+            }
+            20%{
+                left: 0;
+            }
+            25%{
+                left: -100%;
+            }
+            45%{
+                left: -100%;
+            }
+            50%{
+                left: -200%;
+            }
+            70%{
+                left: -200%;
+            }
+            75%{
+                left: -300%;
+            }
+            95%{
+                left: -300%;
+            }
+            100%{
+                left: -400%;
+            }
+       }
+
+       /* <!-- WE GIVE IMAGES FOR USER TO SEARCH THIS  --> */
+
+       #home{
+           position: absolute;
+           top: 2%;
+           left: 30%;
+
+       }
+       #f{
+           position: absolute;
+           left: 35%;
+           top: 75%;
+       }
+ 
+       #mobile{
+           position: absolute;
+           top: 2%;
+           left: 50%;
+
+       }
+       #s{
+           position: fixed;
+           left: 52%;
+           bottom: 75%;
+        }
+    
+
+       
+       #electric{
+           position: absolute;
+           top: 2%;
+           left: 70%;
+
+       }
+       #t{
+           position: fixed;
+           left: 71%;
+           bottom: 75%;
+       }
+       
+   </style>
+ <body>
+      
+
+    <div>
+        <input type="search" id="user" placeholder="Search Products & More "  onkeypress="fun()">
+    </div>
+     
+     <div class="imagefirst">
+         <img  id="sourceimg" src="" >
+     </div>
+
+     <!-- <div  class="image1">
+        <img src="file:///F:/foldable.webp" alt="">
+        </div> -->
+
+        <!--  func 2nd we are arrow clickable -->
+
+        <p> <i  onclick="right()" class="right"></i></p>
+
+        <p> <i onclick="left()" class="left"></i></p>
+
+        <img  src=" ">
+
+        <!-- THIS IS IMAGE SLIDER -->
+
+        <div class="container">
+            <figure>
+                <img src="file:///F:/f3.webp" alt="">
+                <img src="file:///F:/f2.webp" alt="">
+                <img src="file:///F:/f4.webp" alt="">
+                <img src="file:///F:/foldable.webp" alt="">
+                <!-- <img src="https://images.samsung.com/in/smartphones/galaxy-z-flip3-5g/buy/zflip3_carousel_foldunfoldcombo_cream_pc.jpg?imwidth=1366" alt=""> -->
+
+
+
+
+            </figure>
+
+        </div>
+
+
+        <!-- WE GIVE IMAGES FOR USER TO SEARCH THIS  -->
+  <div id="foruser">
+        <div id="home">
+            <img src="file:///F:/home.jpg" alt="">
+              <P id="f">HOME</P>
+            
+        </div>
+        
+        <div id="mobile">
+            <img src="file:///F:/M%20appliences.png" alt="">
+            <P id="s">MOBILE</P>
+
+        </div>
+
+        <div id="electric">
+            <img src="file:///F:/electric.png " alt="">
+            <P id="t">ELECTRONICS</P>
+
+        </div>
+        </div>
+
+     
+     <script>
+         function fun(){
+
+            var shoe='shoe';
+            var led='led';
+            var laptop='laptop';
+            var mobile='mobile';
+
+
+            var img=document.getElementById('user').value
+            if((img==led) ){
+                sourceimg.src=" file:///C:/Users/admin/Pictures/led.webp";
+            }else if(img==laptop){
+                  sourceimg.src=" file:///F:/laptop2.webp";
+            }else if(img==mobile){
+                sourceimg.src="file:///F:/iphone-11-pro.webp";
+            }
+         }
+
+        //  func 2nd arrow
+
+
+        let img=document.querySelector("img");
+        let right=document.querySelector(".right");
+        let left=document.querySelector(".left");
+
+
+        right.addEventListener('click',()=>{
+            img.src="file:///F:/f3.webp";
+        })
+        left.addEventListener('click',()=>{
+            img.src="  file:///F:/f2.webp";
+        })
+
+        
+
+  
+
+
+        
+        
+
+
+
+     </script>
+ </body>
+ </html>
+
+<!-- " WHAT IS MACHINE LEARNING &AI"
+" WHAT IS CGPA " -->
+ 
